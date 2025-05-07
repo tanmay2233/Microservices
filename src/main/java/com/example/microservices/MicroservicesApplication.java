@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.UUID;
 
 @SpringBootApplication
 public class MicroservicesApplication {
@@ -26,7 +27,7 @@ public class MicroservicesApplication {
                     new OrderItem("item2", "Mouse", 5, 200)
             );
 
-            OrderEvent orderEvent = new OrderEvent("1", "PENDING", "Sample order data", items);
+            OrderEvent orderEvent = new OrderEvent("1", "PENDING", "Sample order data", items, UUID.randomUUID().toString());
             System.out.println("Initiating demo order placement for orderId: " + orderEvent.getOrderId());
 
             orderService.placeOrder(orderEvent);
