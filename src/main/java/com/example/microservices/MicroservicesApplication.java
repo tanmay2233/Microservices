@@ -27,10 +27,16 @@ public class MicroservicesApplication {
                     new OrderItem("item2", "Mouse", 5, 200)
             );
 
-            OrderEvent orderEvent = new OrderEvent("1", "PENDING", "Sample order data", items, UUID.randomUUID().toString());
-            System.out.println("Initiating demo order placement for orderId: " + orderEvent.getOrderId());
+            List<OrderItem> items2 = Arrays.asList(
+                    new OrderItem("item3", "Laptop", 2, 100),
+                    new OrderItem("item2", "Mouse", 5, 200)
+            );
 
+            OrderEvent orderEvent = new OrderEvent("1", "PENDING", "Sample order data 1", items, UUID.randomUUID().toString(), System.currentTimeMillis());
+            System.out.println("Initiating demo order placement for orderId: " + orderEvent.getOrderId());
+            OrderEvent orderEvent2 = new OrderEvent("2", "PENDING", "Sample order data 2", items2, UUID.randomUUID().toString(),System.currentTimeMillis());
             orderService.placeOrder(orderEvent);
+            orderService.placeOrder(orderEvent2);
         };
     }
 }
