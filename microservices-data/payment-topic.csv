@@ -1,0 +1,2 @@
+timestamp;partition;offset;key;value
+1746992107509;0;0;1;"{""orderId"":""1"",""status"":""ORDER_VALIDATED"",""data"":null,""amtToBePaid"":1200,""items"":null,""correlationId"":""4f916084-8d49-471e-9d56-b53a1b3ec938"",""timestamp"":1746992107505}"
